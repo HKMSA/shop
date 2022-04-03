@@ -9,7 +9,7 @@
     - [**View listings**](#view-listings)
     - [**Upload products form**](#upload-products-form)
     - [**Upload a product**](#upload-a-product)
-    - [**View edit product page??**](#view-edit-product-page)
+    - [**Edit product page**](#edit-product-page)
     - [**Update listing**](#update-listing)
     - [**Delete listing**](#delete-listing)
   
@@ -175,14 +175,6 @@
 
 - **Parameters**
 
-    JSON Body
-
-    ```JSON
-    {
-        "memberID": "ID"??
-    }
-    ```
-
     Query string
 
     | Name | Type | Example |
@@ -234,7 +226,7 @@
     }
     ```
 
-    `401 UNAUTHORIZED`
+    `403 FORBIDDEN`
 
 ---
 
@@ -262,8 +254,7 @@
 
     ```JSON
     {
-        "memberID" : "Member ID",
-        "productID": "product ID",
+        "productID": "product ID"
     }
     ```
 
@@ -285,7 +276,7 @@
     }
     ```
 
-    `401 UNAUTHORIZED`
+    `403 FORBIDDEN`
 
 ---
 
@@ -313,7 +304,6 @@
 
     ```JSON
     {
-        "memberID": "Member ID",
         "productID" : "ID"
     }
     ```
@@ -330,7 +320,7 @@
     }
     ```
 
-    `401 UNAUTHORIZED`
+    `403 FORBIDDEN`
 
 ---
 
@@ -353,14 +343,6 @@
     `GET`
 
 - **Parameters**
-
-    JSON Body
-
-    ```JSON
-    {
-        "memberID": "Member ID"??
-    }
-    ```
 
     Query string
 
@@ -405,7 +387,7 @@
     }
     ```
 
-    `401 UNAUTHORIZED`
+    `403 FORBIDDEN`
 
     `404 NOT FOUND`
 
@@ -516,11 +498,11 @@
     }
     ```
 
-    `401 UNAUTHORIZED`
+    `403 FORBIDDEN`
 
 ---
 
-### **View edit product page??**
+### **Edit product page**
 
 - **Description**
 
@@ -568,7 +550,7 @@
     }
     ```
 
-    `401 UNAUTHORIZED`
+    `403 FORBIDDEN`
 
     `404 NOT FOUND`
 
@@ -631,7 +613,7 @@
     }
     ```
 
-    `401 UNAUTHORIZED`
+    `403 FORBIDDEN`
 
 ---
 
@@ -667,6 +649,6 @@
 
     `204 NO CONTENT`
 
-    `401 UNAUTHORIZED`
+    `403 FORBIDDEN`
 
 ---
