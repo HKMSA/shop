@@ -6,10 +6,9 @@
     - [**Get wishlist**](#get-wishlist)
     - [**Add to wishlist**](#add-to-wishlist)
     - [**Remove from wishlist**](#remove-from-wishlist)
-    - [**View listings**](#view-listings)
-    - [**Upload products form**](#upload-products-form)
-    - [**Upload a product**](#upload-a-product)
-    - [**Edit product page**](#edit-product-page)
+    - [**Get listings**](#get-listings)
+    - [**Get single listing**](#get-single-listing)
+    - [**Create a listing**](#create-a-listing)
     - [**Update listing**](#update-listing)
     - [**Delete listing**](#delete-listing)
   
@@ -25,17 +24,17 @@
 
     Get all products on sale. Sort and filter with query parameters
 
-- **Visibility**
-
-    Public
-
 - **Endpoint**
 
     `/products`
   
 - **Request Method:**
   
-  `GET`
+    `GET`
+
+- **Visibility**
+
+    Public
 
 - **Parameters**
 
@@ -98,10 +97,6 @@
   
     Get single product page (by hash)
 
-- **Visiblity**
-
-    Public
-
 - **Endpoint**
   
     `/products/{hash}`
@@ -109,6 +104,10 @@
 - **Request Method**
 
     `GET`
+
+- **Visiblity**
+
+    Public
 
 - **Parameters**
 
@@ -159,11 +158,7 @@
 
 - **Description**
 
-    Get all products in your wishlist (wishlist with your memberID)
-
-- **Visibility**
-
-    Private
+    Get all products in a member's wishlist (wishlist with a member's ID)
 
 - **Endpoint**
   
@@ -172,6 +167,12 @@
 - **Request Method**
 
     `GET`
+
+- **Authentication**
+
+    | Name | Type | Comments |
+    | ----------- | ----------- | ----------- |
+    | JWT | str | extract credentials for validation |
 
 - **Parameters**
 
@@ -217,6 +218,8 @@
     }
     ```
 
+    `403 FORBIDDEN`
+
     `404 NOT FOUND`
 
     ```JSON
@@ -226,87 +229,35 @@
     }
     ```
 
-    `403 FORBIDDEN`
-
 ---
 
 ### **Add to wishlist**
 
 - **Description**
 
-    Add a product to your wishlist
-
-- **Visibility**
-
-    Private
+    Add a product to a member's wishlist
 
 - **Endpoint**
   
-    `/wishlist`
+    `/wishlist/{hash}`
 
 - **Request Method**
 
     `POST`
 
-- **Parameters**
+- **Authentication**
 
-    JSON Body
-
-    ```JSON
-    {
-        "productID": "product ID"
-    }
-    ```
-
-- **Responses**
-
-    `201 CREATED`
-
-    ```JSON
-    {
-        "message": "Successful"
-    }
-    ```
-
-    `400 BAD REQUEST`
-
-    ```JSON
-    {
-        "message": "Error message"
-    }
-    ```
-
-    `403 FORBIDDEN`
-
----
-
-### **Remove from wishlist**
-
-- **Description**
-
-    Delete product from your wishlist
-
-- **Visibility**
-
-    Private
-
-- **Endpoint**
-  
-    `/wishlist`
-
-- **Request Method**
-
-    `DELETE`
+    | Name | Type | Comments |
+    | ----------- | ----------- | ----------- |
+    | JWT | str | extract credentials for validation |
 
 - **Parameters**
 
-    JSON Body
+    Path parameter
 
-    ```JSON
-    {
-        "productID" : "ID"
-    }
-    ```
+    | Name | Type | Description |
+    |-----|-----|-----|
+    | hash | str | the hash of a product
 
 - **Responses**
 
@@ -324,23 +275,69 @@
 
 ---
 
-### **View listings**
+### **Remove from wishlist**
 
 - **Description**
 
-    View all your listings (get products with memberID = your ID). Sort and filter by query parameters
-
-- **Visibility**
-
-    Private
+    Delete a product from a member's wishlist
 
 - **Endpoint**
   
-    `/sell`
+    `/wishlist/{hash}`
+
+- **Request Method**
+
+    `DELETE`
+
+- **Authentication**
+
+    | Name | Type | Comments |
+    | ----------- | ----------- | ----------- |
+    | JWT | str | extract credentials for validation |
+
+- **Parameters**
+
+    Path parameter
+
+    | Name | Type | Description |
+    |-----|-----|-----|
+    | hash | str | the hash of a product
+
+- **Responses**
+
+    `204 NO CONTENT`
+
+    `400 BAD REQUEST`
+
+    ```JSON
+    {
+        "message": "Error message"
+    }
+    ```
+
+    `403 FORBIDDEN`
+
+---
+
+### **Get listings**
+
+- **Description**
+
+    Get a members's listings (get all products with member's ID). Sort and filter by query parameters
+
+- **Endpoint**
+  
+    `/listings`
 
 - **Request Method**
 
     `GET`
+
+- **Authentication**
+
+    | Name | Type | Comments |
+    | ----------- | ----------- | ----------- |
+    | JWT | str | extract credentials for validation |
 
 - **Parameters**
 
@@ -400,125 +397,25 @@
 
 ---
 
-### **Upload products form**
+### **Get single listing**
 
 - **Description**
 
-    Returns a blank form for the seller to fill in
-
-- **Visibility**
-
-    Private
+    Get a member's single listing for editing. Depending on isDraft -> Draft page will have buttons SAVE DRAFT, ADD ITEM, DELETE | Existing product page will have buttons SAVE, DELETE
 
 - **Endpoint**
   
-    `/sell/new`
+    `/listings/{hash}`
 
 - **Request Method**
 
     `GET`
 
-- **Parameters**
+- **Authentication**
 
-    `N/A`
-
-- **Responses**
-
-    `200 OK`
-
-    ```JSON
-    {
-        "message": "successful"
-    }
-    ```
-
-    `401 UNAUTHORIZED`
-
----
-
-### **Upload a product**
-
-- **Description**
-
-    Upload a new product -> published if isDraft=false, draft if isDraft=true
-
-- **Visibility**
-
-    Private
-
-- **Endpoint**
-  
-    `/sell`
-
-- **Request Method**
-
-    `POST`
-
-- **Parameters**
-
-    JSON Body
-
-    ```JSON
-    {
-        "memberID" : "Seller's ID",
-        "productCategory": "category",
-        "name": "",
-        "description": "",
-        "condition": "",
-        "price": "",
-        "dealOption": "",
-        "meetupLocation": "",
-        "shippingLocation": "",
-        "imagePath": "",
-        "isDraft": true or false,
-    }
-    ```
-
-- **Responses**
-
-    `201 CREATED`
-
-    ```JSON
-    {
-        "message": "Successful",
-        "data": {
-            "id": "ID",
-            "hash": "hash",
-            "createdAt": "",
-        }
-    }
-    ```
-
-    `400 BAD REQUEST`
-
-    ```JSON
-    {
-        "message": "Error message",
-        "data": {}
-    }
-    ```
-
-    `403 FORBIDDEN`
-
----
-
-### **Edit product page**
-
-- **Description**
-
-    Page to edit product details, depending on isDraft | Draft page will have buttons SAVE DRAFT, ADD ITEM, DELETE | Existing product page will have buttons SAVE, DELETE
-
-- **Visibility**
-
-    Private
-
-- **Endpoint**
-  
-    `/sell/{hash}`
-
-- **Request Method**
-
-    `GET`
+    | Name | Type | Comments |
+    | ----------- | ----------- | ----------- |
+    | JWT | str | extract credentials for validation |
 
 - **Parameters**
 
@@ -563,23 +460,25 @@
 
 ---
 
-### **Update listing**
+### **Create a listing**
 
 - **Description**
 
-    Save edits
-
-- **Visibility**
-
-    Private
+    Create a new listing (published if isDraft=false, draft if isDraft=true)
 
 - **Endpoint**
   
-    `/sell`
+    `/listings`
 
 - **Request Method**
 
-    `PUT`
+    `POST`
+
+- **Authentication**
+
+    | Name | Type | Comments |
+    | ----------- | ----------- | ----------- |
+    | JWT | str | extract credentials for validation |
 
 - **Parameters**
 
@@ -587,7 +486,73 @@
 
     ```JSON
     {
-        "hash": "hash",
+        "productCategory": "category",
+        "name": "",
+        "description": "",
+        "condition": "",
+        "price": "",
+        "dealOption": "",
+        "meetupLocation": "",
+        "shippingLocation": "",
+        "imagePath": "",
+        "isDraft": true or false,
+    }
+    ```
+
+- **Responses**
+
+    `201 CREATED`
+
+    ```JSON
+    {
+        "message": "Successful",
+        "data": {
+            "id": "ID",
+            "hash": "hash",
+            "createdAt": "",
+        }
+    }
+    ```
+
+    `400 BAD REQUEST`
+
+    ```JSON
+    {
+        "message": "Error message",
+        "data": {}
+    }
+    ```
+
+    `403 FORBIDDEN`
+
+---
+
+### **Update listing**
+
+- **Description**
+
+    Update a listing or draft
+
+- **Endpoint**
+  
+    `/listings/{hash}`
+
+- **Request Method**
+
+    `PUT`
+
+- **Authentication**
+
+    | Name | Type | Comments |
+    | ----------- | ----------- | ----------- |
+    | JWT | str | extract credentials for validation |
+
+- **Parameters**
+
+    JSON Body
+
+    ```JSON
+    {
         "status": "status",
         "productCategory": "category",
         "name": "",
@@ -598,6 +563,7 @@
         "meetupLocation": "",
         "shippingLocation": "",
         "imagePath": "",
+        "isDraft": true or false
     }
     ```
 
@@ -621,29 +587,29 @@
 
 - **Endpoint**
   
-    `/sell`
-
-- **Visibility**
-
-    Private
+    `/listings/{hash}`
 
 - **Description**
 
-    Delete a listing
+    Delete a listing or draft
 
 - **Request Method**
 
     `DELETE`
 
+- **Authentication**
+
+    | Name | Type | Comments |
+    | ----------- | ----------- | ----------- |
+    | JWT | str | extract credentials for validation |
+
 - **Parameters**
 
-    JSON BODY
+    Path parameter
 
-    ```JSON
-    {
-        "hash": "hash",
-    }
-    ```
+    | Name | Type | Description |
+    |-----|-----|-----|
+    | hash | str | the hash of a product
 
 - **Responses**
 
