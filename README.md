@@ -1,4 +1,5 @@
 # **HKMSA SHOP**
+
 - [**HKMSA SHOP**](#hkmsa-shop)
   - [**API**](#api)
     - [**Get products**](#get-products)
@@ -22,7 +23,7 @@
 
 - **Description**
 
-    Get all products on sale. Sort and filter with query parameters
+    Get all products on sale. Sort and filter with query parameters, using pipe delimiter %7C
 
 - **Endpoint**
 
@@ -42,7 +43,7 @@
 
     | Name | Type | Example |
     | ----------- | ----------- | ----------- |
-    | Category | str | ?category=bags |
+    | Category | str | ?category=bags%7Capparel |
     | Condition | str | ?condition=new |
     | Deal option | str | ?dealOption=meetup |
     | Sort by | str | ?sort=recent |
@@ -158,7 +159,7 @@
 
 - **Description**
 
-    Get all products in a member's wishlist (wishlist with a member's ID)
+    Get all products in a member's wishlist (wishlist with a member's ID). Sort and filter with query parameters, using pipe delimiter %7C
 
 - **Endpoint**
   
@@ -323,7 +324,7 @@
 
 - **Description**
 
-    Get a members's listings (get all products with member's ID). Sort and filter by query parameters
+    Get a members's listings (get all products with member's ID). Sort and filter with query parameters, using pipe delimiter %7C
 
 - **Endpoint**
   
