@@ -62,11 +62,11 @@
         "message" : "Successful",
         "data" : [
             {
-                "id": "ID",
-                "hash": "hash",
-                "memberID" : "Seller's ID",
-                "status" : "status",
-                "productCategory": "category",
+                "id": "",
+                "hash": "",
+                "memberID" : "",
+                "status" : "",
+                "productCategory": "",
                 "name": "",
                 "description": "",
                 "condition": "",
@@ -126,11 +126,11 @@
     {
         "message" : "Successful",
         "data" : {
-            "id": "ID",
-            "hash": "hash",
-            "memberID" : "Seller's ID",
-            "status" : "status",
-            "productCategory": "category",
+            "id": "",
+            "hash": "",
+            "memberID" : "",
+            "status" : "",
+            "productCategory": "",
             "name": "",
             "description": "",
             "condition": "",
@@ -200,11 +200,11 @@
         "message" : "Successful",
         "data" : [
             {
-                "id": "ID",
-                "hash": "hash",
-                "memberID": "Seller's ID",
-                "status": "status",
-                "productCategory": "category",
+                "id": "",
+                "hash": "",
+                "memberID": "",
+                "status": "",
+                "productCategory": "",
                 "name": "",
                 "description": "",
                 "condition": "",
@@ -324,7 +324,7 @@
 
 - **Description**
 
-    Get a members's listings (get all products with member's ID). Sort and filter with query parameters, using pipe delimiter %7C
+    Get a members's listings or drafts (get all products with member's ID). Sort and filter with query parameters, using pipe delimiter %7C
 
 - **Endpoint**
   
@@ -366,11 +366,11 @@
         "message": "successful",
         "data": [
             {
-                "id": "ID",
-                "hash": "hash",
-                "memberID": "Seller's ID",
-                "status": "status",
-                "productCategory": "category",
+                "id": "",
+                "hash": "",
+                "memberID": "",
+                "status": "",
+                "productCategory": "",
                 "name": "",
                 "description": "",
                 "condition": "",
@@ -434,8 +434,8 @@
     {
         "message": "success",
         "data": {
-            "status": "status",
-            "productCategory": "category",
+            "status": "",
+            "productCategory": "",
             "name": "",
             "description": "",
             "condition": "",
@@ -444,6 +444,7 @@
             "meetupLocation": "",
             "shippingLocation": "",
             "imagePath": "",
+            "isDraft": true or false,
         }
     }
     ```
@@ -487,7 +488,7 @@
 
     ```JSON
     {
-        "productCategory": "category",
+        "productCategory": "",
         "name": "",
         "description": "",
         "condition": "",
@@ -554,8 +555,8 @@
 
     ```JSON
     {
-        "status": "status",
-        "productCategory": "category",
+        "status": "",
+        "productCategory": "",
         "name": "",
         "description": "",
         "condition": "",
