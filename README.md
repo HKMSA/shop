@@ -488,6 +488,7 @@
 
     ```JSON
     {
+        "status": "",
         "productCategory": "",
         "name": "",
         "description": "",
