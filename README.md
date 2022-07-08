@@ -1,6 +1,8 @@
 # **HKMSA SHOP**
 
 - [**HKMSA SHOP**](#hkmsa-shop)
+  - [**Available query parameters**](#available-query-parameters)
+    - [**Sample query**](#sample-query)
   - [**API**](#api)
     - [**Get products**](#get-products)
     - [**Get single product**](#get-single-product)
@@ -12,7 +14,28 @@
     - [**Create a listing**](#create-a-listing)
     - [**Update listing**](#update-listing)
     - [**Delete listing**](#delete-listing)
+  - [**Important developer Notes**](#important-developer-notes)
   
+---
+
+## **Available query parameters**
+
+| Name | Type | Param | Values |
+| ------- | ------- | ------- | ------- |
+| Category | str | category | Bags, Apparel, Furniture, ElectricalAppliances |
+| Condition | str | condition | BrandNew, LikeNew, Used |
+| Delivery option | str | deliveryOption | MeetUp, Delivery |
+| Sort by | str | sort | recent, price |
+| Ascending | bool | asc | True, False |
+| Min price | int | minPrice | *integer value* |
+| Max price | int | maxPrice | *integer value* |
+| Limit | int | limit | *integer value* |
+| Offset | int | offset | *integer value* |
+
+### **Sample query**
+Get all Bags and Furniture that are BrandNew or Used, sort by price:
+http://api-dev.thehkmsa.com/products?category=Bags|Furniture&condition=BrandNew|Used&sort=price&asc=True
+
 ---
 
 ## **API**
@@ -23,7 +46,7 @@
 
 - **Description**
 
-    Get all products on sale. Sort and filter with query parameters, using pipe delimiter %7C
+    Get all products on sale. Sort and filter with query parameters, using pipe delimiter '|' or %7C
 
 - **Endpoint**
 
@@ -43,9 +66,9 @@
 
     | Name | Type | Example |
     | ----------- | ----------- | ----------- |
-    | Category | str | ?category=bags%7Capparel |
-    | Condition | str | ?condition=new |
-    | Deal option | str | ?dealOption=meetup |
+    | Category | str | ?category=Bags\|Apparel |
+    | Condition | str | ?condition=BrandNew |
+    | Delivery option | str | ?deliveryOption=MeetUp |
     | Sort by | str | ?sort=recent |
     | Ascending | bool | ?asc=True |
     | Min price | int | ?minPrice=69 |
@@ -71,7 +94,7 @@
                 "description": "",
                 "condition": "",
                 "price": "",
-                "dealOption": "",
+                "deliveryOption": "",
                 "meetupLocation": "",
                 "shippingLocation": "",
                 "createdAt": "",
@@ -135,7 +158,7 @@
             "description": "",
             "condition": "",
             "price": "",
-            "dealOption": "",
+            "deliveryOption": "",
             "meetupLocation": "",
             "shippingLocation": "",
             "createdAt": "",
@@ -181,9 +204,9 @@
 
     | Name | Type | Example |
     | ----------- | ----------- | ----------- |
-    | Category | str | ?category=bags |
-    | Condition | str | ?condition=new |
-    | Deal option | str | ?dealOption=meetup |
+    | Category | str | ?category=Bags |
+    | Condition | str | ?condition=BrandNew |
+    | Delivery option | str | ?deliveryOption=MeetUp |
     | Sort by | str | ?sort=recent |
     | Ascending | bool | ?asc=True |
     | Min price | int | ?minPrice=69 |
@@ -209,7 +232,7 @@
                 "description": "",
                 "condition": "",
                 "price": "",
-                "dealOption": "",
+                "deliveryOption": "",
                 "meetupLocation": "",
                 "shippingLocation": "",
                 "createdAt": "",
@@ -347,8 +370,8 @@
     | Name | Type | Example |
     | ----------- | ----------- | ----------- |
     | Category | str | ?category=bags |
-    | Condition | str | ?condition=new |
-    | Deal option | str | ?dealOption=meetup |
+    | Condition | str | ?condition=BrandNew |
+    | Delivery option | str | ?deliveryOption=MeetUp |
     | Sort by | str | ?sort=recent |
     | Ascending | bool | ?asc=True |
     | isDraft | bool | ?isDraft=True |
@@ -375,7 +398,7 @@
                 "description": "",
                 "condition": "",
                 "price": "",
-                "dealOption": "",
+                "deliveryOption": "",
                 "meetupLocation": "",
                 "shippingLocation": "",
                 "createdAt": "",
@@ -440,7 +463,7 @@
             "description": "",
             "condition": "",
             "price": "",
-            "dealOption": "",
+            "deliveryOption": "",
             "meetupLocation": "",
             "shippingLocation": "",
             "imagePath": "",
@@ -494,7 +517,7 @@
         "description": "",
         "condition": "",
         "price": "",
-        "dealOption": "",
+        "deliveryOption": "",
         "meetupLocation": "",
         "shippingLocation": "",
         "imagePath": "",
@@ -562,7 +585,7 @@
         "description": "",
         "condition": "",
         "price": "",
-        "dealOption": "",
+        "deliveryOption": "",
         "meetupLocation": "",
         "shippingLocation": "",
         "imagePath": "",
@@ -621,3 +644,8 @@
     `403 FORBIDDEN`
 
 ---
+
+## **Important developer Notes**
+
+- JWT authentication is currently **unavailable**. Enter a (fake) member id that you can get by calling `GET /fake_members` as authentication for the dummy API
+- Any bugs (very likely got) and any additional fields that need to be added to the response, please report to Jalik via WhatsApp or Discord
