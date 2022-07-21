@@ -98,7 +98,7 @@ http://api-dev.thehkmsa.com/products?category=Bags|Furniture&condition=BrandNew|
                 "meetupLocation": "",
                 "shippingLocation": "",
                 "createdAt": "",
-                "imagePath": ""
+                "imagePath": []
             },
         ]
     }
@@ -162,7 +162,7 @@ http://api-dev.thehkmsa.com/products?category=Bags|Furniture&condition=BrandNew|
             "meetupLocation": "",
             "shippingLocation": "",
             "createdAt": "",
-            "imagePath": ""
+            "imagePath": []
         }
     }
     ```
@@ -236,7 +236,7 @@ http://api-dev.thehkmsa.com/products?category=Bags|Furniture&condition=BrandNew|
                 "meetupLocation": "",
                 "shippingLocation": "",
                 "createdAt": "",
-                "imagePath": "",
+                "imagePath": [],
             },
         ]
     }
@@ -402,7 +402,7 @@ http://api-dev.thehkmsa.com/products?category=Bags|Furniture&condition=BrandNew|
                 "meetupLocation": "",
                 "shippingLocation": "",
                 "createdAt": "",
-                "imagePath": "",
+                "imagePath": [],
             },
         ]
     }
@@ -466,7 +466,7 @@ http://api-dev.thehkmsa.com/products?category=Bags|Furniture&condition=BrandNew|
             "deliveryOption": "",
             "meetupLocation": "",
             "shippingLocation": "",
-            "imagePath": "",
+            "imagePath": [],
             "isDraft": true or false,
         }
     }
@@ -520,7 +520,7 @@ http://api-dev.thehkmsa.com/products?category=Bags|Furniture&condition=BrandNew|
         "deliveryOption": "",
         "meetupLocation": "",
         "shippingLocation": "",
-        "imagePath": "",
+        "imagePath": [],
         "isDraft": true or false,
     }
     ```
@@ -588,7 +588,7 @@ http://api-dev.thehkmsa.com/products?category=Bags|Furniture&condition=BrandNew|
         "deliveryOption": "",
         "meetupLocation": "",
         "shippingLocation": "",
-        "imagePath": "",
+        "imagePath": [],
         "isDraft": true or false
     }
     ```
