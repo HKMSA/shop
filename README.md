@@ -24,6 +24,7 @@
 | ------- | ------- | ------- | ------- |
 | Category | str | category | Bags, Apparel, Furniture, ElectricalAppliances |
 | Condition | str | condition | BrandNew, LikeNew, Used |
+| Status | str | status | Available, Reserved, Sold |
 | Delivery option | str | deliveryOption | MeetUp, Delivery |
 | Sort by | str | sort | recent, price |
 | Ascending | bool | asc | True, False |
@@ -68,6 +69,7 @@ http://api-dev.thehkmsa.com/products?category=Bags|Furniture&condition=BrandNew|
     | ----------- | ----------- | ----------- |
     | Category | str | ?category=Bags\|Apparel |
     | Condition | str | ?condition=BrandNew |
+    | Status | str | status | ?status=Available |
     | Delivery option | str | ?deliveryOption=MeetUp |
     | Sort by | str | ?sort=recent |
     | Ascending | bool | ?asc=True |
@@ -206,6 +208,7 @@ http://api-dev.thehkmsa.com/products?category=Bags|Furniture&condition=BrandNew|
     | ----------- | ----------- | ----------- |
     | Category | str | ?category=Bags |
     | Condition | str | ?condition=BrandNew |
+    | Status | str | status | ?status=Available |
     | Delivery option | str | ?deliveryOption=MeetUp |
     | Sort by | str | ?sort=recent |
     | Ascending | bool | ?asc=True |
@@ -371,6 +374,7 @@ http://api-dev.thehkmsa.com/products?category=Bags|Furniture&condition=BrandNew|
     | ----------- | ----------- | ----------- |
     | Category | str | ?category=bags |
     | Condition | str | ?condition=BrandNew |
+    | Status | str | status | ?status=Available |
     | Delivery option | str | ?deliveryOption=MeetUp |
     | Sort by | str | ?sort=recent |
     | Ascending | bool | ?asc=True |
@@ -648,4 +652,5 @@ http://api-dev.thehkmsa.com/products?category=Bags|Furniture&condition=BrandNew|
 ## **Important developer Notes**
 
 - JWT authentication is currently **unavailable**. Enter a (fake) member id that you can get by calling `GET /fake_members` as authentication for the dummy API
+- Query parameters are currently case sensitive and can sometimes return 422 status code if incorrect datatype provided
 - Any bugs (very likely got) and any additional fields that need to be added to the response, please report to Jalik via WhatsApp or Discord
