@@ -114,6 +114,8 @@ http://api-dev.thehkmsa.com/products?category=Bags|Furniture&condition=BrandNew|
         "data" : []
     }
     ```
+    
+    `422 Unprocessable Entity`
 
 ---
 
@@ -255,6 +257,8 @@ http://api-dev.thehkmsa.com/products?category=Bags|Furniture&condition=BrandNew|
         "data" : []
     }
     ```
+    
+    `422 Unprocessable Entity`
 
 ---
 
@@ -422,6 +426,8 @@ http://api-dev.thehkmsa.com/products?category=Bags|Furniture&condition=BrandNew|
         "data": []
     }
     ```
+    
+    `422 Unprocessable Entity`
 
 ---
 
@@ -554,6 +560,8 @@ http://api-dev.thehkmsa.com/products?category=Bags|Furniture&condition=BrandNew|
     ```
 
     `403 FORBIDDEN`
+    
+    `422 Unprocessable Entity`
 
 ---
 
@@ -610,6 +618,8 @@ http://api-dev.thehkmsa.com/products?category=Bags|Furniture&condition=BrandNew|
     ```
 
     `403 FORBIDDEN`
+    
+    `422 Unprocessable Entity`
 
 ---
 
@@ -652,5 +662,6 @@ http://api-dev.thehkmsa.com/products?category=Bags|Furniture&condition=BrandNew|
 ## **Important developer Notes**
 
 - JWT authentication is currently **unavailable**. Enter a (fake) member id that you can get by calling `GET /fake_members` as authentication for the dummy API
-- Query parameters are currently case sensitive and can sometimes return 422 status code if incorrect datatype provided
+- API returns `422 Unprocessable Entity` status code when data is not in the correct type (e.g. `asc=string_value`)
+- Query parameters are currently case sensitive
 - Any bugs (very likely got) and any additional fields that need to be added to the response, please report to Jalik via WhatsApp or Discord
