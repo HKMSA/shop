@@ -87,20 +87,20 @@ http://api-dev.thehkmsa.com/products?category=Bags|Furniture&condition=BrandNew|
         "message" : "Successful",
         "data" : [
             {
-                "id": "",
-                "hash": "",
-                "memberID" : "",
-                "status" : "",
-                "productCategory": "",
-                "name": "",
-                "description": "",
-                "condition": "",
-                "price": "",
-                "deliveryOption": "",
-                "meetupLocation": "",
-                "shippingLocation": "",
-                "createdAt": "",
-                "imagePath": []
+                "id": str,
+                "hashID": str,
+                "memberID": int,
+                "status": str,
+                "category": str,
+                "name": str,
+                "description": str,
+                "condition": str,
+                "price": float,
+                "deliveryOption": str,
+                "location": str,
+                "createdAt": datetime,
+                "imagePath": list,
+                "isDraft": bool
             },
         ]
     }
@@ -152,22 +152,22 @@ http://api-dev.thehkmsa.com/products?category=Bags|Furniture&condition=BrandNew|
     ```JSON
     {
         "message" : "Successful",
-        "data" : {
-            "id": "",
-            "hash": "",
-            "memberID" : "",
-            "status" : "",
-            "productCategory": "",
-            "name": "",
-            "description": "",
-            "condition": "",
-            "price": "",
-            "deliveryOption": "",
-            "meetupLocation": "",
-            "shippingLocation": "",
-            "createdAt": "",
-            "imagePath": []
-        }
+        "data": {
+            "id": str,
+            "hashID": str,
+            "memberID": int,
+            "status": str,
+            "category": str,
+            "name": str,
+            "description": str,
+            "condition": str,
+            "price": float,
+            "deliveryOption": str,
+            "location": str,
+            "createdAt": datetime,
+            "imagePath": list,
+            "isDraft": bool
+        },
     }
     ```
 
@@ -228,20 +228,20 @@ http://api-dev.thehkmsa.com/products?category=Bags|Furniture&condition=BrandNew|
         "message" : "Successful",
         "data" : [
             {
-                "id": "",
-                "hash": "",
-                "memberID": "",
-                "status": "",
-                "productCategory": "",
-                "name": "",
-                "description": "",
-                "condition": "",
-                "price": "",
-                "deliveryOption": "",
-                "meetupLocation": "",
-                "shippingLocation": "",
-                "createdAt": "",
-                "imagePath": [],
+                "id": str,
+                "hashID": str,
+                "memberID": int,
+                "status": str,
+                "category": str,
+                "name": str,
+                "description": str,
+                "condition": str,
+                "price": float,
+                "deliveryOption": str,
+                "location": str,
+                "createdAt": datetime,
+                "imagePath": list,
+                "isDraft": bool
             },
         ]
     }
@@ -397,20 +397,20 @@ http://api-dev.thehkmsa.com/products?category=Bags|Furniture&condition=BrandNew|
         "message": "successful",
         "data": [
             {
-                "id": "",
-                "hash": "",
-                "memberID": "",
-                "status": "",
-                "productCategory": "",
-                "name": "",
-                "description": "",
-                "condition": "",
-                "price": "",
-                "deliveryOption": "",
-                "meetupLocation": "",
-                "shippingLocation": "",
-                "createdAt": "",
-                "imagePath": [],
+                "id": str,
+                "hashID": str,
+                "memberID": int,
+                "status": str,
+                "category": str,
+                "name": str,
+                "description": str,
+                "condition": str,
+                "price": float,
+                "deliveryOption": str,
+                "location": str,
+                "createdAt": datetime,
+                "imagePath": list,
+                "isDraft": bool
             },
         ]
     }
@@ -467,18 +467,21 @@ http://api-dev.thehkmsa.com/products?category=Bags|Furniture&condition=BrandNew|
     {
         "message": "success",
         "data": {
-            "status": "",
-            "productCategory": "",
-            "name": "",
-            "description": "",
-            "condition": "",
-            "price": "",
-            "deliveryOption": "",
-            "meetupLocation": "",
-            "shippingLocation": "",
-            "imagePath": [],
-            "isDraft": true or false,
-        }
+            "id": str,
+            "hashID": str,
+            "memberID": int,
+            "status": str,
+            "category": str,
+            "name": str,
+            "description": str,
+            "condition": str,
+            "price": float,
+            "deliveryOption": str,
+            "location": str,
+            "createdAt": datetime,
+            "imagePath": list,
+            "isDraft": bool
+        },
     }
     ```
 
@@ -521,17 +524,16 @@ http://api-dev.thehkmsa.com/products?category=Bags|Furniture&condition=BrandNew|
 
     ```JSON
     {
-        "status": "",
-        "productCategory": "",
-        "name": "",
-        "description": "",
-        "condition": "",
-        "price": "",
-        "deliveryOption": "",
-        "meetupLocation": "",
-        "shippingLocation": "",
-        "imagePath": [],
-        "isDraft": true or false,
+        "status": str,
+        "category": str,
+        "name": str,
+        "description": str,
+        "condition": str,
+        "price": float,
+        "deliveryOption": str,
+        "location": str,
+        "imagePath": list,
+        "isDraft": bool,
     }
     ```
 
@@ -543,10 +545,21 @@ http://api-dev.thehkmsa.com/products?category=Bags|Furniture&condition=BrandNew|
     {
         "message": "Successful",
         "data": {
-            "id": "ID",
-            "hash": "hash",
-            "createdAt": "",
-        }
+            "id": str,
+            "hashID": str,
+            "memberID": int,
+            "status": str,
+            "category": str,
+            "name": str,
+            "description": str,
+            "condition": str,
+            "price": float,
+            "deliveryOption": str,
+            "location": str,
+            "createdAt": datetime,
+            "imagePath": list,
+            "isDraft": bool
+        },
     }
     ```
 
@@ -591,23 +604,44 @@ http://api-dev.thehkmsa.com/products?category=Bags|Furniture&condition=BrandNew|
 
     ```JSON
     {
-        "status": "",
-        "productCategory": "",
-        "name": "",
-        "description": "",
-        "condition": "",
-        "price": "",
-        "deliveryOption": "",
-        "meetupLocation": "",
-        "shippingLocation": "",
-        "imagePath": [],
-        "isDraft": true or false
+        "status": str,
+        "category": str,
+        "name": str,
+        "description": str,
+        "condition": str,
+        "price": float,
+        "deliveryOption": str,
+        "location": str,
+        "imagePath": list,
+        "isDraft": bool,
     }
     ```
 
 - **Responses**
 
-    `204 NO CONTENT`
+    `200 OK`
+    
+    ```JSON
+    {
+      "message": "Successful",
+      "data": {
+          "id": str,
+          "hashID": str,
+          "memberID": int,
+          "status": str,
+          "category": str,
+          "name": str,
+          "description": str,
+          "condition": str,
+          "price": float,
+          "deliveryOption": str,
+          "location": str,
+          "createdAt": datetime,
+          "imagePath": list,
+          "isDraft": bool
+      },
+    }
+    ```
 
     `400 BAD REQUEST`
 
@@ -662,6 +696,7 @@ http://api-dev.thehkmsa.com/products?category=Bags|Furniture&condition=BrandNew|
 ## **Important developer Notes**
 
 - JWT authentication is currently **unavailable**. Enter a (fake) member id that you can get by calling `GET /fake_members` as authentication for the dummy API
-- API returns `422 Unprocessable Entity` status code when data is not in the correct type (e.g. `asc=string_value`)
-- Query parameters are currently case sensitive
-- Any bugs (very likely got) and any additional fields that need to be added to the response, please report to Jalik via WhatsApp or Discord
+- API returns `422 Unprocessable Entity` status code when data is not in the correct type (e.g. `asc=string_value`) or missing certain fields
+- Query parameters and request fields are no longer case sensitive
+- Datetime format is {Y}-{M}-{D}T{H}:{m}:{s}
+- If there are any bugs and any suggestions, please report via WhatsApp or Discord
