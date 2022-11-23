@@ -100,7 +100,8 @@ http://api-dev.thehkmsa.com/products?category=Bags|Furniture&condition=BrandNew|
                 "location": str,
                 "createdAt": datetime,
                 "imagePath": list,
-                "isDraft": bool
+                "isDraft": bool,
+                "contact" str
             },
         ]
     }
@@ -166,7 +167,8 @@ http://api-dev.thehkmsa.com/products?category=Bags|Furniture&condition=BrandNew|
             "location": str,
             "createdAt": datetime,
             "imagePath": list,
-            "isDraft": bool
+            "isDraft": bool,
+            "contact" str
         },
     }
     ```
@@ -241,7 +243,8 @@ http://api-dev.thehkmsa.com/products?category=Bags|Furniture&condition=BrandNew|
                 "location": str,
                 "createdAt": datetime,
                 "imagePath": list,
-                "isDraft": bool
+                "isDraft": bool,
+                "contact" str
             },
         ]
     }
@@ -410,7 +413,8 @@ http://api-dev.thehkmsa.com/products?category=Bags|Furniture&condition=BrandNew|
                 "location": str,
                 "createdAt": datetime,
                 "imagePath": list,
-                "isDraft": bool
+                "isDraft": bool,
+                "contact" str
             },
         ]
     }
@@ -480,7 +484,8 @@ http://api-dev.thehkmsa.com/products?category=Bags|Furniture&condition=BrandNew|
             "location": str,
             "createdAt": datetime,
             "imagePath": list,
-            "isDraft": bool
+            "isDraft": bool,
+            "contact" str
         },
     }
     ```
@@ -558,7 +563,8 @@ http://api-dev.thehkmsa.com/products?category=Bags|Furniture&condition=BrandNew|
             "location": str,
             "createdAt": datetime,
             "imagePath": list,
-            "isDraft": bool
+            "isDraft": bool,
+            "contact" str
         },
     }
     ```
@@ -639,7 +645,8 @@ http://api-dev.thehkmsa.com/products?category=Bags|Furniture&condition=BrandNew|
           "location": str,
           "createdAt": datetime,
           "imagePath": list,
-          "isDraft": bool
+          "isDraft": bool,
+          "contact" str
       },
     }
     ```
@@ -696,7 +703,7 @@ http://api-dev.thehkmsa.com/products?category=Bags|Furniture&condition=BrandNew|
 
 ## **Important developer Notes**
 
-- JWT authentication is currently **unavailable**. Enter a (fake) member id that you can get by calling `GET /fake_members` as authentication for the dummy API
+- Refer to tests/TESTCASE.md and tests/setup.sql for creating dummy users for authentication
 - API returns `422 Unprocessable Entity` status code when data is not in the correct type (e.g. `asc=string_value`) or missing certain fields
 - Query parameters and request fields are no longer case sensitive
 - Datetime format is {Y}-{M}-{D}T{H}:{m}:{s}
