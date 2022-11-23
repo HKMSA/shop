@@ -101,7 +101,7 @@ http://api-dev.thehkmsa.com/products?category=Bags|Furniture&condition=BrandNew|
                 "createdAt": datetime,
                 "imagePath": list,
                 "isDraft": bool,
-                "contact" str
+                "contact": str
             },
         ]
     }
@@ -168,7 +168,7 @@ http://api-dev.thehkmsa.com/products?category=Bags|Furniture&condition=BrandNew|
             "createdAt": datetime,
             "imagePath": list,
             "isDraft": bool,
-            "contact" str
+            "contact": str
         },
     }
     ```
@@ -244,7 +244,7 @@ http://api-dev.thehkmsa.com/products?category=Bags|Furniture&condition=BrandNew|
                 "createdAt": datetime,
                 "imagePath": list,
                 "isDraft": bool,
-                "contact" str
+                "contact": str
             },
         ]
     }
@@ -414,7 +414,7 @@ http://api-dev.thehkmsa.com/products?category=Bags|Furniture&condition=BrandNew|
                 "createdAt": datetime,
                 "imagePath": list,
                 "isDraft": bool,
-                "contact" str
+                "contact": str
             },
         ]
     }
@@ -485,7 +485,7 @@ http://api-dev.thehkmsa.com/products?category=Bags|Furniture&condition=BrandNew|
             "createdAt": datetime,
             "imagePath": list,
             "isDraft": bool,
-            "contact" str
+            "contact": str
         },
     }
     ```
@@ -564,7 +564,7 @@ http://api-dev.thehkmsa.com/products?category=Bags|Furniture&condition=BrandNew|
             "createdAt": datetime,
             "imagePath": list,
             "isDraft": bool,
-            "contact" str
+            "contact": str
         },
     }
     ```
@@ -646,7 +646,7 @@ http://api-dev.thehkmsa.com/products?category=Bags|Furniture&condition=BrandNew|
           "createdAt": datetime,
           "imagePath": list,
           "isDraft": bool,
-          "contact" str
+          "contact": str
       },
     }
     ```
