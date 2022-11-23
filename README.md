@@ -619,7 +619,7 @@ http://api-dev.thehkmsa.com/products?category=Bags|Furniture&condition=BrandNew|
         "deliveryOption": str,
         "location": str,
         "addImages": list,
-        "deleteImages: list,
+        "deleteImages": list,
         "isDraft": bool,
     }
     ```
